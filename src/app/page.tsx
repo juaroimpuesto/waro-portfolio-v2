@@ -57,17 +57,51 @@ export default function Home() {
               </div>
             </div>
           )}
-          {/* ... (POS and RAG sections same as before) ... */}
+
           {activeProject === 'pos' && (
-            <div className="animate-in zoom-in-95 duration-700 text-center">
+            <div className="animate-in zoom-in-95 duration-700">
+              <div className="text-center mb-16">
+                <span className="text-blue-500 font-mono text-[10px] uppercase tracking-widest mb-4 block font-bold italic">Retail Solutions</span>
                 <h1 className="text-7xl md:text-[10rem] font-black text-blue-500 uppercase italic leading-none mb-6">Inventory</h1>
-                <p className="text-gray-400 text-xl max-w-2xl mx-auto italic">Advanced POS & Inventory Tracking for Modern Retail.</p>
+                <p className="text-gray-400 text-xl max-w-2xl mx-auto italic leading-relaxed">A high-speed Point of Sale system tailored for hardware stores. Built from scratch to handle stock monitoring, sales tracking, and automated reporting.</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {[
+                  { t: 'Sales Insight', d: 'Real-time revenue analytics.', i: <TrendingUp/> },
+                  { t: 'Stock Guard', d: 'Automated low-stock alerts.', i: <Database/> },
+                  { t: 'Unit Tracker', d: 'Precision item monitoring.', i: <Cpu/> }
+                ].map(item => (
+                  <div key={item.t} className="p-10 bg-blue-500/5 border border-blue-500/10 rounded-[40px] text-center hover:bg-blue-500/10 transition not-italic">
+                    <div className="text-blue-500 mb-4 flex justify-center">{item.i}</div>
+                    <h3 className="font-black uppercase tracking-widest text-xs mb-2">{item.t}</h3>
+                    <p className="text-[10px] text-gray-500 uppercase font-bold">{item.d}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
+
           {activeProject === 'rag' && (
-            <div className="animate-in slide-in-from-right-8 duration-700">
-                <h1 className="text-6xl md:text-8xl font-black text-purple-400 uppercase italic leading-none">Knowledge <br/> Base.</h1>
-                <p className="text-gray-400 text-xl mt-8">Private AI Document Intelligence with Zero Data Leaks.</p>
+            <div className="grid lg:grid-cols-2 gap-16 items-center animate-in slide-in-from-right-8 duration-700">
+              <div className="p-10 bg-purple-900/10 border border-purple-500/20 rounded-[40px] font-mono shadow-2xl not-italic">
+                 <p className="text-[10px] text-purple-500 uppercase tracking-widest mb-6 font-black underline underline-offset-4 italic">Neural Knowledge Core</p>
+                 <div className="space-y-6">
+                    <div className="p-6 bg-purple-500/10 rounded-2xl border border-purple-500/20 italic text-sm text-purple-200">
+                      "I have indexed your business documents. Ask me anything."
+                    </div>
+                    <div className="h-px bg-purple-500/20 w-full" />
+                    <p className="text-[11px] leading-relaxed text-gray-500 tracking-tight uppercase">Processing context from 12,000+ internal nodes...</p>
+                 </div>
+              </div>
+              <div>
+                <span className="text-purple-500 font-mono text-[10px] uppercase tracking-widest mb-4 block font-bold italic underline decoration-2">Generative AI</span>
+                <h1 className="text-6xl md:text-8xl font-black text-purple-400 uppercase italic leading-none mb-8">Knowledge <br/> Base.</h1>
+                <p className="text-gray-400 text-lg leading-relaxed italic mb-8">We train custom AI on your private company files so your team can get instant, accurate answers without data leaks.</p>
+                <div className="flex flex-wrap gap-4 not-italic">
+                  <span className="px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-[10px] font-black uppercase tracking-widest text-purple-400 italic">No Public Data Leakage</span>
+                  <span className="px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-[10px] font-black uppercase tracking-widest text-purple-400 italic">Custom RAG Logic</span>
+                </div>
+              </div>
             </div>
           )}
         </div>
@@ -124,7 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Featured Deployments */}
       <section id="projects" className="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
         <h2 className="text-[10px] font-black text-green-500 uppercase tracking-[0.4em] font-mono underline underline-offset-4 mb-16 not-italic">01 // Featured Deployments</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -141,7 +175,7 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="max-w-7xl mx-auto px-6 py-48 border-t border-white/5 text-center relative flex flex-col items-center">
         <div className="relative group flex flex-col items-center">
-          <motion.h3 onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className="text-5xl md:text-[5rem] font-black tracking-tighter uppercase leading-none transition-all duration-500 cursor-crosshair" style={{ textShadow: isHovered ? '0 0 35px rgba(34, 197, 94, 0.9)' : 'none', color: isHovered ? '#22c55e' : 'white' }}>LET&apos;S ENGINEER <br/> THE FUTURE.</motion.h3>
+          <motion.h3 onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className="text-5xl md:text-[10rem] font-black tracking-tighter uppercase leading-none transition-all duration-500 cursor-crosshair" style={{ textShadow: isHovered ? '0 0 35px rgba(34, 197, 94, 0.9)' : 'none', color: isHovered ? '#22c55e' : 'white' }}>LET&apos;S ENGINEER <br/> THE FUTURE.</motion.h3>
           <AnimatePresence>
             {isHovered && (
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="mt-8 z-20">
