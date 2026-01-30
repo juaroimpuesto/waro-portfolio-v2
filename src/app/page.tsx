@@ -95,7 +95,7 @@ export default function Home() {
   onClick={() => window.open('https://wa.me/639452371937?text=Hi%20Juaro,%20I%20would%20like%20to%20start%20a%20project%20with%20Waro%20Tech!', '_blank')}
   className="px-10 py-4 bg-green-500 text-black font-black rounded-full hover:bg-white transition-all transform hover:scale-105 uppercase text-[10px] tracking-[0.2em]"
 >
-  Let's Start A Project
+  Let&apos;s Start A Project
 </button>
         </div>
       </section>
